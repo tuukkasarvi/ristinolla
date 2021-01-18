@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://www.hut.fi/~t106213/mallipohjat/projektidokumentti.html -->
+<HTML lang=fi><HEAD><TITLE>T-106.213 projektityön dokumentti</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="noindex, nofollow" name=robots>
+<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#5555bb link=#0000ff bgColor=#ffffff>
+<TABLE cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+  <TBODY>
+  <TR vAlign=top align=left>
+    <TD>
+      <H3><font face="Arial Narrow">T-106.213 projektityön dokumentti</font></H3>
+      <p><font size="6" face="Arial Narrow"><b>Ristinolla</b></font></p><P><font face="Arial Narrow" size="3">Tuukka
+      Sarvi (tsarvi@cc.hut.fi), 57679S, S I</font></P>
+      <P><font face="Arial Narrow">Päivitetty 8.1.2003</font></P>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Yleiskuvaus</font></H3><p>
+      <font face="Arial Narrow">Toteuttamani peli
+      on perinteinen ristinolla, jossa tavoitteena on saada aikaan viiden
+      peräkkäisen rastin tai renkaan suora ruudukolle.</font></p><p>
+      <font face="Arial Narrow">Peli on pyritty
+      tekemään siten, että se toteuttaa vaikean vaatimustason
+      kriteerit.&nbsp; Peli toteuttaa ensisijaisesti tehtävänannon (c)-kohdan
+      vaatimukset.</font></p><p><font face="Arial Narrow">Pelin tärkeimmät ominaisuudet (tehtävänantoa
+      mukaillen) ovat seuraavat:</font></p>
+      <ul>
+        <li><font face="Arial Narrow">Mahdollisuus pelata jätkänshakkia joko kaksinpelinä tai
+          yksinpelinä tietokonevastustajaa vastaan.</font></li>
+        <li><font face="Arial Narrow">Ohjelma ilmoittaa pelin päättyneeksi kun toinen pelaajista on
+          saanut muodostettua viiden suoransa tai, kun kumpikaan ei voi enää
+          voittaa laudan rajallisen koon takia.</font></li>
+        <li><font face="Arial Narrow">Kohtalainen tietokonevastustaja (Niilo Neuvokas).</font></li>
+        <li><font face="Arial Narrow">Mahdollisuus tallentaa pelitilanne halutun nimiseen tiedostoon ja
+          jatkaa sitä myöhemmin lataamalla peli tiedostosta.</font></li>
+        <li><font face="Arial Narrow">Mahdollisuus selata peliä yksi siirto kerrallaan pelin alusta
+          loppuun asti.&nbsp;</font></li>
+        <li><font face="Arial Narrow">Graafinen käyttöliittymä, jota jokainen Windowsia käyttänyt
+          osaa käyttää, ja joka osaa reagoida useimpiin virhetilanteisiin.</font></li>
+      </ul>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Käyttöohje</font></H3>
+      <P><font face="Arial Narrow">Ohjelma käynnistetään tarvittavat 
+      luokkatiedostot sisältävässä hakemistossa komennolla: java Ristinolla. 
+      Tämän seurauksena ruutuun pitäisi avautua, käyttöjärjestelmästä riippuen, 
+      jotakuinkin alla olevan näköinen ikkuna.</font></P>
+      <P align="center"><img border="0" src="paaikkuna.gif" width="411" height="333"></P>
+      <P><font face="Arial Narrow">Pelin pääikkunassa on kolme eri 
+      toimintokokonaisuutta: peliruudukko, siirtojen selausnapit ja ylävalikko. 
+      Peliruudukon ruutuja painamalla pelaaja(t) voivat tehdä haluamansa 
+      siirron. Kun jotain ruutua painaa, sen paikalle ilmestyy joko rasti tai 
+      rengas, riippuen siitä kumpi pelaaja oli vuorossa. Tämän lisäksi ruutu 
+      menee disabled-tilaan, jolloin sitä ei voi enää painaa saman pelin aikana. 
+      Kun pelaaja on jotain ruutua painamalla tehnyt siirtonsa, siirtyy vuoro 
+      seuraavalle pelaajalle.</font></P>
+      <P><font face="Arial Narrow">Siirtojen selausnapit, eli ikkunan 
+      alareunassa olevat kaksi nuoli-ikoneilla varustettua nappia, 
+      mahdollistavat siirtojen selaamisen eteen- ja taaksepäin. Nuoli vasemmalle 
+      siirtää pelitilannetta yhden siirron taaksepäin ja nuoli oikealle siirtää 
+      pelitilannetta vastaavasti yhden siirron eteenpäin. Käyttäjän
+      selatessa siirtoja 
+      taaksepäin peliruudukon napit menevät disabled-tilaan estäen siirtojen 
+      tekemisen muualla kuin nykyisessä pelitilanteessa. </font></P>
+      <P><font face="Arial Narrow">Ylävalikossa on kaksi osaa: Peli ja Ohje. 
+      Peli-kohta sisältää valinnat: Uusi peli, Avaa peli, Tallenna peli ja 
+      Lopeta. Ohje sisältää vain yhden valinnan: Tietoja (kertoo yleisiä tietoja 
+      pelistä).</font></P>
+      <P><font face="Arial Narrow">Valitsemalla Uusi peli, käyttäjä voi aloittaa 
+      uuden ristinollapelin. Valinnan seurauksena näytölle avautuu uusi ikkuna, 
+      jossa voi muuttaa luotavan pelin asetuksia. Muutettavia asetuksia ovat 
+      rasti- ja rengaspelaajan tyyppi sekä pelikentän leveys ja korkeus. 
+      Pelaajatyyppejä on kolme: Ihminen, Reiska Random ja Niilo Neuvokas. 
+      Ihminen edustaa ihmispelaajaa, Reiska Random täysin satunnaisesti pelaavaa 
+      tekoälyä ja Niilo Neuvokas kohtalaisesti pelaavaa tekoälyä. Leveys- ja 
+      korkeuskentät määrittävät pelikentän koon. Minimissään kenttien arvojen on 
+      oltava 5 ja maksimissaan 50.</font></P>
+      <P><font face="Arial Narrow">Avaa peli-valinta käynnistää ruudulle 
+      hakemistopuun sisältävän ikkunan. Käyttäjän valittua haluamansa tiedoston, 
+      ohjelma yrittää avata sen. Jos avaaminen onnistuu, tulostuu näytölle 
+      lista, joka sisältää tiedostoon tallennetut pelit. Kun käyttäjän on listasta 
+      valinnut haluamansa pelin ja painanut Avaa-nappia, sulkeutuu avaamisikkuna 
+      ja valitun pelin tilanne viimeisen siirron kohdalta tulostuu pääikkunaan.</font></P>
+      <P><font face="Arial Narrow">Tallenna peli-valinnalla pääikkunassa oleva 
+      peli voidaan tallettaa haluttuun tiedostoon. Valinnan seurauksena avautuu 
+      hakemistopuun sisältävä ikkuna, josta käyttäjä voi valita 
+      tallennustiedoston. Jos valittu tiedosto on toimiva 
+      ristinollapelitiedosto, tai jos käyttäjä erillisen välikysymyksen jälkeen 
+      valitsee tallettavansa pelin tiedostoon siitä huolimatta, että se ei ole 
+      toimiva ristinollapelitiedosto, tulostuu näytölle ikkuna, jossa kysytään 
+      pelaajien nimiä. Käyttäjän muutettua nimet haluamansa muotoon ja valittua 
+      Tallenna, ohjelma tallettaa pelin tiedostoon.</font></P>
+      <P><font face="Arial Narrow">Lopeta-valinta yksinkertaisesti sulkee pelin.
+      </font></P>
+      <P><font face="Arial Narrow">Pääikkunassa on yllä mainittujen toimintojen 
+      lisäksi tekstikenttä, joka kertoo pelin tilan. Pelin ollessa käynnissä 
+      kenttä on tyhjä, muulloin siinä lukee, pelin lopputuloksesta riippuen 
+      &quot;Rasti voittaa&quot;, &quot;Rengas voittaa&quot; tai &quot;Tasapeli&quot;. </font></P>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Ohjelman rakenne</font></H3>
+      <p><font face="Arial Narrow">Peli voidaan jakaa sisältämiensä luokkien 
+      perusteella kolmeen osakokonaisuuteen: pelin tietorakenteet, 
+      tiedostonkäsittely ja käyttöliittymä.</font></p>
+      <h4><font face="Arial Narrow">Pelin tietorakenteet</font></h4>
+      <p><font face="Arial Narrow">Pelin tietorakenteet osakokonaisuus sisältää 
+      seuraavat luokat: Koordinaatit, Siirto, Pelikentta, Pelaaja, Ihmispelaaja, 
+      PelaajaReiskaRandom, PelaajaNiiloNeuvokas, Ristinollapeli ja Ristinolla.</font></p>
+      <p><font face="Arial Narrow">Koordinaatit-luokka kuvaa tason 
+      koordinaatteja (x,y) ja sisältää yksinkertaisia metodeja niiden 
+      manipuloimiseksi. Siirto-luokka on Koordinaatit-luokan triviaali 
+      aliluokka, joka kuvaa yhtä rastin tai renkaan paikkaa, eli yhtä 
+      ristinollapelin siirtoa. Erillisen Siirto-luokan luominen pelin siirtojen 
+      kuvaamiseen, koordinaattiparien käyttämisen sijasta, on perusteltua, koska 
+      se auttaa selkeyttämään ohjelmakoodia, erottaen ne kohdat, joissa on kyse 
+      koordinaateista niistä, joissa on kyse jonkun pelaajan siirroista.</font></p>
+      <p><font face="Arial Narrow">Pelikentta kuvaa ruudukkoa, jossa 
+      ristinollapeli pelataan. Luokassa kutakin ruutua edustaa char-arvo, joka voi olla 
+      'x', 'o' tai ' ' vastaten rastia, rengasta tai tyhjää ruutua. Itse 
+      ruudukkoa edustaa char[][]-taulukko. Olisi ollut mahdollista luoda
+      erillinen luokka kuvaamaan yhtä pelikentän ruutua, mutta tässä
+      tapauksessa char-arvojen käyttö on toimivampi ratkaisu, koska se
+      mahdollistaa peliruudukon rivien, sarakkeiden ja diagonaalien
+      suoraviivaisen muuttamisen String-olioiksi - seikka, johon lähes kaikki
+      pelin algoritmit nojaavat. Pelikentta-luokka sisältää muun muassa 
+      metodit ruutujen arvojen tutkimiseksi ja asettamiseksi sekä joitain 
+      erikoistuneempia metodeja. </font></p>
+      <p><font face="Arial Narrow">Pelaaja on abstrakti luokka, joka kuvaa 
+      pelaajan yleisiä ominaisuuksia (nimi, pelimerkki, ym.). Se sisältää 
+      muutamia valmiiksi toteutettuja metodeja ja abstraktin metodin 
+      mietiSiirto():Siirto, joka sen aliluokkien täytyy toteuttaa. Juuri metodin 
+      mietiSiirto():Siirto erilainen toteutus mahdollistaa eri pelaajatyyppien 
+      luomisen.</font></p>
+      <p><font face="Arial Narrow">Ihmispelaaja, PelaajaReiskaRandom ja 
+      PelaajaNiiloNeuvokas ovat Pelaaja-luokan aliluokkia. Niistä kukin 
+      määrittää oman toteutuksensa mietiSiirto()-metodille.</font></p>
+      <p><font face="Arial Narrow">Ristinollapeli-luokka kuvaa yhtä 
+      ristinollapeliä (pelaajat, pelikenttä, jne.) ja on pelirungon keskeisin 
+      luokka. Se vastaa pelaajien ja pelikentän kommunikaatiosta sekä pelin 
+      rungon puolesta siitä, että käyttäjä voi halutessaan kelata siirtoja eteen 
+      ja taakse pelikentän päivittyessä vastaavasti. Ristinollapeli-luokka 
+      sisältää metodit paivitaPelinTila():void ja kerroPelinTila():int, joiden 
+      avulla saadaan tietoon pelattavan pelin nykyinen tila (käynnissä, rasti 
+      voittaa, rengas voittaa tai tasapeli).</font></p>
+      <p><font face="Arial Narrow">Luokka Ristinolla edustaa koko peliä ja sisältää pelkän
+      main()-metodin. Sen tehtävä rajoittuu pelin käyttöliittymän käynnistämiseen.</font></p>
+      <h4><font face="Arial Narrow">Tiedostonkäsittely</font></h4>
+      <p><font face="Arial Narrow">Tiedostonkäsittely sisältää luokat: 
+      RistinollapelitiedostonLukija, RistinollapelitiedostonKirjoittaja ja 
+      KelvotonRistinollapelitiedosto.</font></p>
+      <p><font face="Arial Narrow">RistinollapelitiedostonLukija-luokan avulla 
+      voidaan lukea ristinollapelitiedostoja (tiedoston muoto on selitetty 
+      kohdassa Tietorakenteet). Sen tärkein metodi on luePelit():Arraylist, joka 
+      antaa palautusarvona ArrayList-olion, joka sisältää tiedostossa olevat
+      pelit Ristinollapeli-oliona.</font></p>
+      <p><font face="Arial Narrow">RistinollapelitiedostonKirjoittaja-luokka 
+      mahdollistaa pelien tallentamisen tiedostoon. Metodilla 
+      tallenna(Ristinollapeli peli):void, haluttu peli voidaan tallentaa 
+      tiedoston loppuun.</font></p>
+      <p><font face="Arial Narrow">KelvotonRistinollapelitiedosto on 
+      Exception-luokan aliluokka, joka kuvaa poikkeustilanteita, joissa 
+      käsiteltävän tiedoston muoto on virheellinen.</font></p>
+      <h4><font face="Arial Narrow">Käyttöliittymä</font></h4>
+      <p><font face="Arial Narrow">Käyttöliittymä sisältää luokat: Paaikkuna, 
+      Ruutunappi, RuutunappienKuuntelija, UusiPeliIkkuna, AvaaPeliIkkuna ja 
+      TallennaPeliIkkuna. Tämän lisäksi edellä mainittuihin luokkiin sisältyy 
+      joukko sisäluokkia, jotka ovat tapahtumankuuntelijoita.&nbsp; </font></p>
+      <p><font face="Arial Narrow">Paaikkuna on pelin toiminnan kannalta tärkein 
+      luokka. Se vastaa pelin toimimisesta käyttäjän komentojen mukaisesti, ja 
+      sen alaisuudessa toimivat kaikki muut pelin luokat Ristinolla-luokkaa 
+      lukuun ottamatta. Käyttöliittymässä Paaikkuna-luokka kuvaa pelin 
+      pääikkunaa ja perii JFrame-luokan. Se sisältää nappiruudukon, joka koostuu 
+      Ruutunappi-olioista, 'Siirto eteen'- ja 'Siirto taakse'- napit, 
+      tekstikentän ja ylävalikon. Paaikkuna-luokan tärkein metodi on 
+      paivitaPelitilanne():void, joka päivittä pelin tilan ja graafisen 
+      käyttöliittymän komponentit uutta tilannetta vastaaviksi ja siirtää vuoron 
+      seuraavalle pelaajalle kutsumalla Pelaaja-olion 
+      mietiSiirto():Siirto-metodia.</font></p>
+      <p><font face="Arial Narrow">Ruutunappi-luokka on JButton-luokan aliluokka 
+      ja kuvaa käyttöliittymässä yhtä ristinollaruudukon nappia. Pelkkä valmiin 
+      JButton-luokan käyttö kuvaamaan ruudukon nappeja ei riitä, koska nappien 
+      on osattava kertoa sijaintinsa ruudukossa, jos tarve vaatii. Suurimpana
+      erona 
+      JButton-luokkaan onkin se, että jokainen Ruutunappi-olio sisältää
+      tiedon sen omasta paikasta peliruudukossa.</font></p>
+      <p><font face="Arial Narrow">RuutunappienKuuntelija-luokka toteuttaa 
+      ActionListener-rajapinnan ja vastaa peliruudukon Ruutunappien painallusten 
+      kuuntelemisesta Paaikkuna-luokan alaisuudessa. Se kuuntelee samalla kertaa 
+      kaikkia ruudukon nappeja ja vastaa tarvittavien metodien, kuten ja 
+      Pelaaja-luokan siirra()-metodin ja Paaikkuna-luokan 
+      paivitaPelitilanne()-metodin, kutsumisesta, jos jotain ruudukon nappia 
+      painetaan. Syy minkä takia Ruutunappien painallusten kuuntelemista ei voi 
+      toteuttaa sisäluokilla, vaan on luotava erillinen tapahtumankuuntelija, on 
+      se, että peliruudukon koko vaihtelee pelistä toiseen.</font></p>
+      <p><font face="Arial Narrow">UusiPeliIkkuna-luokka, joka on JDialog-luokan 
+      aliluokka, kuvaa ikkunaa, jossa käyttäjä syöttää uuden pelin tiedot 
+      tietokoneelle. Paaikkuna-luokka luo uuden UusiPeliIkkuna-olion ja pistää 
+      sen näkyviin siinä tapauksessa, että käyttäjä on valikosta valinnut kohdan 
+      Uusi peli. UusiPeliIkkuna luo käyttäjän syötteen perusteella uuden 
+      Ristinollapeli-olion ja antaa sen Paaikkuna-luokalle jatkotoimenpiteitä 
+      varten. </font></p>
+      <p><font face="Arial Narrow">AvaaPeliIkkuna edustaa ikkunaa, jossa 
+      käyttäjä voi valita tiedoston sisältämistä peleistä mieleisensä 
+      avattavaksi. JFileChooser-luokan ilmentymällä siis valitaan haluttu 
+      tiedosto, jonka jälkeen se lähetetään AvaaPeliIkkuna-oliolle, joka 
+      sisältää RistinollapeliLukija-olion, joka vastaa tiedoston lukemisesta. 
+      AvaaPeliIkkuna-olio tulostaa tiedoston pelit näytölle, ja käyttäjän tehtyä 
+      valintansa, se lähettää valitun Ristinollapeli-olion sitä kutsuneelle 
+      Paaikkuna-oliolle. AvaaPeliIkkuna perii JDialog-luokan.</font></p>
+      <p><font face="Arial Narrow">TallennaPeliIkkuna kuvaa ikkuna, jossa 
+      käyttäjä, kirjoitettuaan ensin tekstikenttiin pelaajien nimet, voi 
+      tallentaa käynnissä olevan pelin. TallennaPeliIkkuna-luokka sisältää 
+      RistinollapelitiedostonKirjoittaja-olion, jonka avulla tiedostoon 
+      kirjoittaminen tapahtuu. TallennaPeliIkkuna perii JDialog-luokan.</font></p>
+      <p><font face="Arial Narrow">Alla olevassa kuvassa luokkarakenne on
+      esitetty UML-kaavion avulla (ruskea = pelin tietorakenteet, sininen =
+      käyttöliittymä ja vihreä = tiedostonkäsittely).&nbsp;</font></p>
+      <P align="center"><img border="0" src="UML.gif" width="735" height="525"></P>
+      <H3><font face="Arial Narrow">Algoritmit</font></H3>
+      <p><font face="Arial Narrow">Pelissä on käytetään kahta algoritmia, jotka 
+      ovat: pelin lopputuloksen määrittäminen ja tietokoneen tekoäly.</font></p>
+      <h4><font face="Arial Narrow">Pelin lopputuloksen määrittäminen</font></h4>
+      <p><font face="Arial Narrow">Pelin lopputuloksen määrittäminen alkaa 
+      sillä, että peliruudukon rivit, sarakkeet ja diagonaalit (kahteen eri 
+      suuntaan) muutetaan merkkijonoiksi. Näistä merkkijonoista etsitään ensin 
+      viiden peräkkäisen rastin- ja renkaan jonoa. Mikäli sellainen löytyy 
+      julistetaan toinen pelaajista voittajaksi. Sen tutkimiseksi onko peli 
+      tasapeli etsitään riveiltä, sarakkeilta ja diagonaaleilta ensin viiden 
+      peräkkäisen tyhjän merkin jonoa. Jos sellainen löytyy, on ainakin 
+      teoriassa vielä mahdollista, että toinen pelaajista saa viiden suoransa 
+      valmiiksi (eli peli ei ole vielä päättynyt). Mikäli viiden tyhjän merkin jonoa ei löydy, siirrytään 
+      seuraavaan vaiheeseen, jossa vuorotellen korvataan tyhjät ruudut rasteilla 
+      ja renkailla ja tutkitaan, että muodostuuko johonkin viiden suoraa. Mikäli 
+      viiden suoraa ei kummankaan pelaajan tapauksessa muodostu, on peli tasapeli.</font></p>
+      <h4><font face="Arial Narrow">Tietokoneen tekoäly</font></h4>
+      <p><font face="Arial Narrow">Pelissä on kaksi tietokonevastustajaa: Reiska 
+      Random ja Niilo Neuvokas. Reiska Random valitsee siirtonsa satunnaisesti 
+      ja ei siis ole varsinaisesti tekoäly. Niilo Neuvokas käyttää siirron 
+      löytämiseen merkkiyhdistelmien tunnistamiseen ja niiden arvottamiseen 
+      perustuvaa algoritmia. Algoritmin perusidea on antaa eri 
+      merkkiyhdistelmille (esim. &quot;_xxx_&quot; ja &quot;xx__&quot;) niiden tavoiteltavuutta 
+      kuvaavat kokonaislukuarvot eli hyötyarvot. Mitä suurempi hyötyarvo sen parempi ja 
+      tavoiteltavampi yhdistelmä. Koko algoritmi voidaan jakaa, alemman tason 
+      toiminnoista ylempiin liikuttaessa, seuraaviin osa-algoritmeihin: 
+      yksittäisen siirron hyötyarvon määrittäminen, hyötyarvomatriisin 
+      laskeminen ja siirron valitseminen.</font></p>
+      <p><font face="Arial Narrow">Yksittäisen siirron hyötyarvoa määritettäessä 
+      muutetaan ensin siirtoa vastaavan ruudun rivi, sarake ja diagonaalit - 
+      siirron vaikutus alue - merkkijonoiksi tietylle etäisyydelle asti (esim. 
+      viiden ruudun päähän). Tämän jälkeen etsitään saaduista merkkijonoista 
+      yhdistelmiä, kuten &quot;MMMM_&quot;, &quot;_MM__&quot; tai &quot;__M__&quot; (M = pelaajan merkki). 
+      Aina kun joku ennalta määritetyistä yhdistelmistä löytyy, lisätään sitä 
+      vastaava hyötyarvo muuttujaan, joka edustaa kokonaishyötyarvoa. Tällä 
+      tavalla lasketaan tilanteelle hyötyarvot ennen ja jälkeen merkin lisäyksen 
+      katsoen tilannetta vuoroin omalta, vuoroin vastustajan kannalta. Ottamalla 
+      erotus alku- ja lopputilanteiden hyötyarvojen välillä saadaan hyötyarvon 
+      muutos. Hyötyarvon muutos lasketaan molempien pelaajien kannalta erikseen. 
+      Tämän jälkeen siirron hyötyarvo saadaan yhtälöstä: (hyötyarvon muutos 
+      omalta kannalta) - (hyötyarvon muutos vastustajan kannalta).</font></p>
+      <p><font face="Arial Narrow">Seuraava askel algoritmissa on 
+      hyötyarvomatriisin laskeminen. Hyötyarvomatriisi on kaksiulotteinen 
+      kokonaislukutaulukko, joka on pelikentän kokoinen, ja joka sisältää 
+      jokaista mahdollista siirtoa vastaavat hyötyarvot. Hyötyarvomatriisi 
+      muodostetaan laskemalla jokaiselle mahdolliselle siirrolle hyötyarvo ja 
+      sijoittamalla se siirtoa vastaavaan kohtaan kaksiulotteisessa taulukossa.</font></p>
+      <p><font face="Arial Narrow">Algoritmin viimeinen vaihe on siirron 
+      valitseminen. Siinä lasketaan hyötyarvomatriisi omalle siirrolle 
+      nykyisessä tilanteessa ja hyötyarvomatriisi vastustajan siirrolle 
+      nykyisessä tilanteessa. Kun omasta - ja vastustajan hyötyarvomatriisista 
+      valitaan suurimmat arvot saadaan hyökkäyshyöty ja puolustushyöty. 
+      Hyökkäyshyöty kertoo suurimman hyödyn, joka seuraa oman pelin 
+      rakentamisesta; puolustushyöty kertoo vastaavasti suurimman hyödyn joka 
+      koituu vastustajan siirron estämisestä. Koska vastustaja uhkaa tehdä 
+      siirtonsa vasta vuoron päästä, ei hyökkäyshyöty ja puolustushyöty eivät 
+      ole suoraan verrattavissa. Tämän tosiasian huomioon ottamiseksi tekoälyyn 
+      on sisällytetty vakio PUOLUSTUSSIIRRON_HEIKENNYSKERROIN (väliltä 0...1), 
+      jolla puolustushyöty kerrotaan, jotta siitä saataisiin vertailukelpoinen 
+      hyökkäyshyötyyn nähden. Kun puolustushyöty on kerrottu 
+      heikennyskertoimella, suoritetaan tekoälyalgoritmin viimeinen vaihe, jossa 
+      saatua puolustushyötyä verrataan hyökkäyshyötyyn. Jos puolustushyöty on 
+      suurempi valitaan siihen johtanut siirto, jos taas hyökkäysetu on suurempi 
+      valitaan sitä vastaava siirto.</font></p>
+      <p><font face="Arial Narrow">On olemassa yksi poikkeustilanne, jolloin 
+      tekoäly ei käytä yllä kuvattua algoritmia siirron määrittämiseen. Tämä 
+      tilanne on pelin alku, jolloin pelikenttä on tyhjä eikä siitä voi saada mitään tietoa. Tässä tapauksessa tekoäly arpoo satunnaisen 
+      siirron pelikentän keskikohdan läheltä.&nbsp;&nbsp; </font></p>
+      <H3><font face="Arial Narrow">Tietorakenteet</font></H3>
+      <p><font face="Arial Narrow">Pelin tärkein tietorakenne on peliruudukko, 
+      joka on toteutettu kaksiulotteisena char-taulukkona. Näin voidaan tehdä, 
+      koska pelikentän leveys ja korkeus eivät muutu pelin aikana. Dynaamisia 
+      tietorakenteita käytetään ohjelmassa yhteyksissä, joissa ei ole tietoa alkioiden kokonaismäärästä. Tällöin on 
+      poikkeuksetta tukeuduttu Javan ArrayList-luokkaan. Ainoa itse luotu 
+      tietorakenne on pelissä käsiteltävien ristinollapelitiedostojen muoto. 
+      Ristinollapelitiedosto on tekstitiedosto ja sen tieto on niissä esitetty 
+      seuraavalla tavalla:</font></p>
+      <p><font face="Arial Narrow">rastipelaajan nimi</font></p>
+      <p><font face="Arial Narrow">rastipelaajan tunniste (määrittää minkä 
+      tyyppinen pelaaja on kyseessä - ihminen vai joku tietokonepelaajista)&nbsp;&nbsp;
+      </font></p>
+      <p><font face="Arial Narrow">rengaspelaajan nimi</font></p>
+      <p><font face="Arial Narrow">rengaspelaajan tunniste</font></p>
+      <p><font face="Arial Narrow">pelikentän leveys</font></p>
+      <p><font face="Arial Narrow">pelikentän korkeus</font></p>
+      <p><font face="Arial Narrow">(1,1) (rastin 1. siirto)</font></p>
+      <p><font face="Arial Narrow">(2,4) (renkaan 1. siirto)</font></p>
+      <p><font face="Arial Narrow">(3,5)</font></p>
+      <p><font face="Arial Narrow">..... (rastin ja renkaan siirtoja 
+      vuorotellen)</font></p>
+      <p><font face="Arial Narrow">---------------- (Erotinrivi, joka erottaa 
+      kaksi peliä toisistaan)</font></p>
+      <p><font face="Arial Narrow">rastipelaajan nimi (jossain toisessa pelissä, 
+      joka on tallennettu samaan tiedostoon)</font></p>
+      <p><font face="Arial Narrow">..... jne. </font></p>
+      <p>&nbsp;</p>
+      <p><font face="Arial Narrow">Yksi ristinollapelitiedosto voi siis sisältää 
+      mielivaltaisen määrän pelejä, kunhan ne on kuvattu yllä esitetyssä 
+      muodossa.</font></p>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Poikkeamat suunnitelmasta</font></H3>
+      <P><font face="Arial Narrow">Suurin poikkeus alkuperäisestä suunnitelmasta 
+      on se, että Ristinolla-luokasta ei tullut pelin luokkakokonaisuuden 
+      kannalta keskeisin luokka. Alkuperäisessä suunnitelmassa juuri sen piti 
+      olla muut luokat yhteen nivova rakennuspala.
+      Sen tehtäväksi lopullisessa versiossa jäi vain Paaikkuna-olion luominen
+      ja sen sen laittaminen ruudulla näkyväksi. Pelirungon keskeisimmäksi
+      luokaksi nousi Ristinollapeli. Koko pelin pääluokaksi nousi
+      käyttöliittymän keskeisin osa Paaikkuna-luokka. Syy luokkarakenteen
+      muuttumiseen on se, että Ristinolla-luokkaa ei tarvittu pelirungossa,
+      eikä myöskään käyttöliittymän puolella. Suunnitelmaa tehdessä
+      allekirjoittaneelle ei ollut selvää miten graafinen käyttöliittymä
+      rakennetaan Javassa. Jälkiviisaasti ajatellen se, että
+      käyttöliittymän pääluokka Paaikkuna nousi pelin osakokonaisuudet
+      yhdistäväksi luokaksi, on varsin luontevaa; Javalla käyttöliittymää
+      luotaessa se useimmiten toimivin ratkaisu.</font></P><P><font face="Arial Narrow">Allekirjoittaneen
+      kokemuksen puute graafisen käyttöliittymän laatimisesta näkyi edellä
+      mainitun seikan lisäksi myös siinä, että valmiissa ohjelmassa on
+      huomattavasti enemmän käyttöliittymään liittyviä luokkia
+      kuin oli suunniteltu. Työn edetessä täytyi luoda luokat, jotka
+      mahdollistivat käyttöliittymän puolelta mm. pelien lataamisen ja
+      tallentamiseen, sekä kuuntelijaluokka ja erillinen Ruutunappi-luokka,
+      jotka tekivät mahdolliseksi peliruudukon toiminnan.</font></P><P><font face="Arial Narrow">Tekoälyn
+      laatiminen eteni suurelta osin alkuperäisen suunnitelman suuntalinjoja
+      pitkin, mutta ei täysin. Alkuperäisessä suunnitelmassa tekoälyn
+      yhteydessä tarvittavat hyötyarvot toteutettiin desimaalilukuina.
+      Lopullisessa ohjelmassa ne olivat kuitenkin kokonaislukuja. Tämä muutos
+      tehtiin sen takia, että kokonaislukujen käsittely käy tietokoneelta
+      huomattavasti nopeammin kuin liukulukujen.</font></P><P><font face="Arial Narrow">
+      Suunniteltuun tiedostomuotoon jouduttiin tekemään muutama muutos. 
+      Pelaajille piti lisätä erilliset tunnisteet, jotta saadaan tietoon 
+      pelaajan tyypit. Tiedostomuoto mahdollistaa lopullisessa versiossa myös 
+      monen pelin tallentamisen samaan tiedostoon, toisin kuin suunnitelmassa.</font></P><P><font face="Arial Narrow">Aikataulussa
+      ei täysin pysytty, koska oli opeteltava paljon uutta asiaa, ja koska
+      dokumentin kirjoittamiseen ja viimeistelyyn kului yllättävän paljon
+      aikaa. Työntekoon käytetty tuntimäärä oli 8h enemmän kuin
+      suunnitelmassa, eli yhteensä
+      80h.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></P>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Arvio lopputuloksesta</font></H3>
+      <p><font face="Arial Narrow">Olen kokonaisuutena hyvin tyytyväinen 
+      saavuttamaani lopputulokseen. Ohjelma toteuttaa mielestäni tehtävänannon 
+      määrittelemät kriteerit. Graafisesta käyttöliittymästä tuli selkeä ja 
+      käytettävyydeltään siedettävä, vaikka en käyttäjäystävällisyyttä 
+      ensisijaisesti lähtenytkään tavoittelemaan. Tietokoneen tekoälystäkin tuli 
+      yllättävän hyvä - se pystyy ajoittain pistämään keskivertopelaajan (tai 
+      ainakin minut) tiukoille.</font></p>
+      <p><font face="Arial Narrow">Käyttämääni luokkarakenteeseenkin olen 
+      tyytyväinen, enkä muuttaisi mitään, jos työ pitäisi aloittaa alusta. Peli 
+      on helposti laajennettavissa vaikkapa uusilla tietokonevastustajilla. 
+      Uuden tietokonevastustajan luomiseksi käyttäjän täytyy vain määritellä 
+      uusi toteutus Pelaaja-luokan mietiSiirto()-metodille. Kaiken kaikkiaan 
+      uskon hyvän luokkarakenteen eheyden olevan ohjelmoinnin ohella tehdyn 
+      jatkuvan suunnittelun tulos.</font></p>
+      <p><font face="Arial Narrow">On ohjelmassa kuitenkin löydettävissä 
+      erinäisiä puutteita. Puutteita löytyy lähinnä käyttöliittymän puolelta, 
+      jossa esimerkiksi, peliä avattaessa tai tallennettaessa avautuva, Javan 
+      Swing luokkakirjastossa valmiiksi toteutettu, tiedoston valitsija on 
+      englanninkielinen, vaikka muu käyttöliittymä on toteutettu suomeksi. Olisi 
+      myös ollut mahdollista ja käyttäjän kannalta mukavaa, tiedoston valitsijan 
+      yhteyteen olisi luotu ns. tiedostofiltteri .xo-päätteisille tiedostoille 
+      ristinollapelitiedostojen löytämisen helpottamiseksi. </font></p>
+      <p><font face="Arial Narrow">Itse koen pelin suurimmaksi puutteeksi, jos 
+      peliä ei tarkastella arvostelukriteerien valossa, riittämättömän 
+      tietokonevastustajan. Suuri parannus olisi muun muassa se, että tietokone 
+      analysoisi tilannetta myös kun käyttäjä miettii omaa siirtoaan - tämän 
+      voisi toteuttaa Javan säikeillä. Tulevaisuudessa aionkin, jos pelin kehittämistä 
+      jatkan, panostaa tekoälyalgoritmin kehittelyyn. </font></p>
+      <p>&nbsp;</p>
+      <H3><font face="Arial Narrow">Viitteet</font></H3>
+      <p><font face="Arial Narrow">Kirjallisuus:</font></p>
+      <ul>
+        <li><font face="Arial Narrow">Arto Wikla: Ohjelmoinnin perusteet 
+        Java-kielellä, OtaDATA 1998.</font></li>
+        <li><font face="Arial Narrow">Luentomateriaali</font></li>
+      </ul>
+      <p><font size="3" face="Arial Narrow">WWW-sivut:</font></p>
+      <ul>
+        <li><a href="http://www.cs.hut.fi/Docs/Eckel/TIJ3ed/TIJ3.htm"><font size="3" face="Arial Narrow">Bruce
+          Eckelin: 'Thinking in Java´</font></a>
+        <li><a href="http://java.sun.com/j2se/1.3/docs/api/"><font size="3" face="Arial Narrow">Java
+          API:n luokkien kuvaukset</font></a>
+        <li><a href="http://java.sun.com/docs/books/tutorial/uiswing/"><font size="3" face="Arial Narrow">Sunin
+          Swing-luokkakirjaston käyttöohjeet</font></a></li>
+        <li><font face="Arial Narrow"><a href="http://developer.java.sun.com/developer/codesamples/examplets/index.html">Examplets
+          from The Java Developers Almanac 2000</a></font></li>
+        <li><a href="http://www.ibiblio.org/javafaq/javafaq.html"><font face="Arial Narrow">The
+          comp.lang.java FAQ List</font></a></li>
+        <li><a href="http://www.hut.fi/~tsarvi/xosuunni.htm"><font face="Arial Narrow">Alkuperäinen
+          suunnitelma</font></a></li>
+      </ul>
+      <H3>&nbsp;</H3>
+      <H3><font face="Arial Narrow">Liitteet</font></H3>
+      <ul>
+        <li><a href="http://www.hut.fi/~tsarvi/koodi/">Ohjelman lähdekoodi</a></li>
+        <li><a href="http://www.hut.fi/~tsarvi/javadoc/index.html">Luokista 
+        generoitu Javadoc-dokumentaatio</a></li>
+      </ul>
+    </TD></TR></TBODY></TABLE></BODY></HTML>
