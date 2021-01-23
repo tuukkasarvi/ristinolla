@@ -17,6 +17,8 @@ java -cp opt/app/Ristinolla.jar Ristinolla
 I was able to deploy this using an AWS EC2 instance, Route 53 (DNS), Apache, webswing and docker. Webswing (https://www.webswing.org/) is a web server that
 makes it possible to run old Swing applications from browser.
 
+Steps to deploy:
+
 1. Provision virtual machine and configure Route 53 to the assigned instance IP. Install Apache web server. Install docker and docker-compose. 
 Install git and ssh and configure credentials.
 2. Clone this repository to EC2 instance. 
