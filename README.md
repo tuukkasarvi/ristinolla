@@ -6,8 +6,7 @@ as a web app for fun.
 Run using java
 
 ```
-cd koodi
-java Ristinolla
+java koodi/Ristinolla
 ``` 
 or
 ``` 
